@@ -4,7 +4,7 @@ struct Stack {
     vector<int> data;
     int top;
 
-    MyStack() : top(-1) {}
+    Stack() : top(-1) {}
 
     void push(int x) {
         data.push_back(x);
@@ -35,7 +35,7 @@ public:
 // Largest Rectangle in Histogram
     int largestRectangleArea(vector<int>& heights) {
         stack<int> s;
-        heights.push_back(0);  // Sentinel to flush the stack
+        heights.push_back(0);  
         int area = 0;
 
         for (int i = 0; i < heights.size(); i++) {
