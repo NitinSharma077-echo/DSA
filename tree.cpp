@@ -43,5 +43,27 @@ public:
         if(root->right && root->right->val <= root->val) return false;
         return isbst(root->left) && isbst(root->right);
     }
-    //
+    //same tree
+    bool sametree(TreeNode* p, TreeNode* q) {
+        if(p==nullptr || q==nullptr){
+            return false;
+        }
+        if (!p && !q) return true;
+        if (p->val != q->val) return false;
+        return sametree(p->left,q->left) && sametree(p->right,q->right);
+    }
+    //max depth
+    int maxdepth(TreeNode* root){
+        if(root == NULL) return 0;
+        return 1+max(maxdepth(root->left), maxdepth(root->right));
+    } 
+    //min depth
+    int mindepth(TreeNode* root){
+        if(root == NULL) return 0;
+        return 1+min(mindepth(root->left), mindepth(root->right));
+    }    
+    //symmetric tree
+    bool symmetric(TreeNode* root){
+        
+    } 
 };
